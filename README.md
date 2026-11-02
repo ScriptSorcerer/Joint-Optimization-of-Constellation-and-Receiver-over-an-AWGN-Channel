@@ -73,7 +73,6 @@ Each script sets `torch.manual_seed(0)`. Results should reproduce exactly on the
 - Only the AWGN channel is modeled, with perfect synchronization.
 - The autoencoder is trained at a single SNR (7 dB).
 - Each experiment uses one random seed.
-- The high Eb/N0 BER points in the sweep rest on few observed errors, so they are imprecise.
 
 ## Possible Extensions
 
