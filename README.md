@@ -60,7 +60,7 @@ Each script prints its results to the console and displays its plots.
 
 ## Method Summary
 
-**QPSK receiver.** Bits are mapped to Gray QPSK symbols with unit average energy. AWGN is added with $\sigma = 0.5/\sqrt{\gamma_b}$. A two-layer MLP (2 → 64 → 2) is trained with binary cross-entropy for 5000 steps using Adam at learning rate $10^{-3}$. The BER is compared with the closed-form expression $P_b = \tfrac{1}{2}\operatorname{erfc}(\sqrt{E_b/N_0})$.
+**QPSK receiver.** Bits are mapped to Gray QPSK symbols with unit average energy. AWGN is added with $\sigma = 0.5/\sqrt{\gamma_b}$. A two-layer MLP (2 → 64 → 2) is trained with binary cross-entropy for 5000 steps using Adam at learning rate $10^{-3}$. The BER is compared with the closed-form expression $P_b = \frac{1}{2}\mathrm{erfc}(\sqrt{E_b/N_0})$.
 
 **16-ary autoencoder.** The encoder (16 → 32 → 2) produces a two-dimensional symbol. Power normalization sets the mean squared symbol norm to 2. The channel adds AWGN at 7 dB during training. The decoder (2 → 32 → 16) outputs logits over the 16 messages. Training uses cross-entropy with Adam at learning rate $10^{-2}$ for 20,000 gradient steps. After training, the constellation is read from the encoder output, and the SER is evaluated over 0 to 12 dB.
 
